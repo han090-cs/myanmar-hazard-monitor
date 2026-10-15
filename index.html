@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Myanmar Hazard Monitor — Live Events &amp; Risk Map</title>
+  <meta name="description" content="Myanmar multi-hazard monitoring: flood and landslide estimates, river forecasts, earthquakes, satellite fire detections, official alerts and source timestamps.">
+  <meta name="theme-color" content="#0b1f33">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MM Hazard">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Myanmar Flood &amp; Landslide Monitor">
+  <meta property="og:description" content="Near real-time flood and landslide hazard map for Myanmar. မြန်မာနိုင်ငံ ရေကြီးမှုနှင့် တောင်ပြိုမှု စောင့်ကြည့်ရေး။">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="js/repair-worker.js?v=20261014-5"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap">
+  <script src="js/leaflet-css-fallback.js?v=20261014-5"></script>
+  <link id="leaflet-css" rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css?v=20261014-5">
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar glass">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 3C16 3 6 14.2 6 20.5a10 10 0 0 0 20 0C26 14.2 16 3 16 3z" fill="#0077be"/>
+          <path d="M3 27l7-9 4 5 4-7 6 11z" fill="#f4a261" opacity=".95"/>
+        </svg>
+        <div class="brand-text">
+          <h1 data-i18n="title">မြန်မာနိုင်ငံ သဘာဝဘေးအန္တရာယ် စောင့်ကြည့်ရေး</h1>
+          <p data-i18n="subtitle">မြေပုံ၊ ခန့်မှန်းချက်၊ ဖြစ်ပွားမှုနှင့် တရားဝင်သတိပေးချက်များ</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="my" aria-pressed="true">မြန်မာ</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="icon-btn" id="focusBtn" data-i18n-aria="focusMap" data-i18n-title="focusMap" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="metrics" id="metrics" aria-live="polite">
+      <article class="card glass card-flood">
+        <h2 data-i18n="cardFlood">စုစုပေါင်း ရေမြုပ်ဧရိယာ (Hectares)</h2>
+        <p class="card-value" id="mFloodValue">–</p>
+        <p class="card-sub" id="mFloodSub"></p>
+      </article>
+      <article class="card glass card-slide">
+        <h2 data-i18n="cardSlide">တောင်ပြိုသတိပေးမြို့နယ် အရေအတွက်</h2>
+        <p class="card-value" id="mSlideValue">–</p>
+        <p class="card-sub" id="mSlideSub"></p>
+      </article>
+            <article class="card glass card-river">
+        <h2 data-i18n="cardRiver">မြစ်ရေကြီးမှု သတိပေးနေရာ (ရက် ၃၀ ခန့်မှန်း)</h2>
+        <p class="card-value" id="mRiverValue">–</p>
+        <p class="card-sub" id="mRiverSub"></p>
+      </article>
+      <article class="card glass card-time">
+        <h2 data-i18n="cardTime">နောက်ဆုံး ဂြိုဟ်တုဒေတာ ရရှိချိန်</h2>
+        <p class="card-value card-value-time" id="mTimeValue">–</p>
+        <p class="card-sub" id="mTimeSub"></p>
+      </article>
+    </section>
+
+    <main class="map-wrap">
+      <div id="map" role="application" data-i18n-aria="mapLabel" aria-label="Map"></div>
+
+      <div class="banner" id="banner" role="status" hidden></div>
+
+      <button type="button" class="alert-fab glass" id="alertsToggle" aria-label="Live alerts" aria-controls="liveAlerts">
+        <span class="alert-fab-dot" aria-hidden="true"></span><span data-i18n="liveAlertsTitle">Live သတိပေးချက်များ</span><span class="alert-count" id="alertCount">0</span>
+      </button>
+
+      <button type="button" class="fab glass" id="layersToggle" aria-expanded="false" aria-controls="layersPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 16l9 5 9-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <span data-i18n="layers">အလွှာများ</span>
+      </button>
+
+      <aside class="panel glass" id="layersPanel" aria-label="Layer controls">
+        <div class="panel-head">
+          <h2 data-i18n="layers">အလွှာများ</h2>
+          <button type="button" class="icon-btn panel-close" id="panelClose" data-i18n-aria="close" aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+
+        <div class="presets" role="group" aria-labelledby="presetsTitle">
+          <p class="presets-title" id="presetsTitle" data-i18n="presetsTitle">မြင်ကွင်း အမြန်ရွေးရန်</p>
+          <div class="preset-row">
+            <button type="button" class="chip-btn" data-preset="summary" data-i18n="presetSummary">အကျဉ်းချုပ်</button>
+            <button type="button" class="chip-btn" data-preset="flood" data-i18n="presetFlood">ရေကြီးမှု</button>
+            <button type="button" class="chip-btn" data-preset="slide" data-i18n="presetSlide">တောင်ပြို</button>
+            <button type="button" class="chip-btn" data-preset="clear" data-i18n="presetClear">နယ်နိမိတ်သာ</button>
+          </div>
+          <button type="button" class="link-btn" id="helpBtn" data-i18n="helpBtn">မြေပုံကို ဘယ်လိုဖတ်မလဲ</button>
+        </div>
+
+        <section class="group" aria-labelledby="g_groupNow">
+          <h3 class="group-title" id="g_groupNow" data-i18n="groupNow">ယခုအခြေအနေနှင့် ခန့်မှန်းချက်</h3>
+        <label class="toggle">
+          <input type="checkbox" id="toggleDmh" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-dmh" aria-hidden="true"></span>
+          <span data-i18n="dmhLayer">DMH သတိပေးထားသော တိုင်း/ပြည်နယ်</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleRain" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-rain" aria-hidden="true"></span>
+          <span data-i18n="rainLayer">မိုးရေချိန် ခန့်မှန်းချက် (မြို့နယ်၊ နာရီ ၇၂)</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleRiver" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-river" aria-hidden="true"></span>
+          <span data-i18n="riverLayer">မြစ်ရေကြီးမှု ခန့်မှန်းချက်</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleEvents" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-events" aria-hidden="true"></span>
+          <span data-i18n="eventsLayer">ငလျင် / ဘေးအန္တရာယ် ဖြစ်ပွားမှုများ</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleRadar">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-radar" aria-hidden="true"></span>
+          <span data-i18n="radarLayer">မိုးရွာသွန်းမှု Radar (နောက်ဆုံး ၂ နာရီ)</span>
+        </label>
+        <p class="public-note" id="radarStatus" data-i18n="radarUnavailable">Radar ဒေတာ မရရှိသေးပါ။ ဒေသအလိုက် coverage မတူနိုင်ပါ။</p>
+        </section>
+
+        <section class="group" aria-labelledby="g_groupSat">
+          <h3 class="group-title" id="g_groupSat" data-i18n="groupSat">ဂြိုဟ်တုဖြင့် တွက်ချက်ထားသည်</h3>
+        <label class="toggle">
+          <input type="checkbox" id="toggleFlood" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-flood" aria-hidden="true"></span>
+          <span data-i18n="floodLayer">ရေကြီးမြုပ်နှံမှု</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleSlide" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-slide" aria-hidden="true"></span>
+          <span data-i18n="slideLayer">တောင်ပြိုအန္တရာယ်</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleSusc">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-susc" aria-hidden="true"></span>
+          <span data-i18n="suscLayer">တောင်ပြိုနိုင်ချေရှိသော မြေမျက်နှာပြင် (ကုန်းစောက်)</span>
+        </label>
+        </section>
+
+        <section class="group" aria-labelledby="g_groupBase">
+          <h3 class="group-title" id="g_groupBase" data-i18n="groupBase">နောက်ခံ အချက်အလက် (အတိတ်/ပုံသေ)</h3>
+        <label class="toggle">
+          <input type="checkbox" id="toggleProne">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-prone" aria-hidden="true"></span>
+          <span data-i18n="proneLayer">ရေကြီးဖူးသော နေရာများ (အတိတ်ဒေတာ)</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleHospitals">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="dot dot-hospital" aria-hidden="true"></span>
+          <span data-i18n="hospitalsLayer">ဆေးရုံများ (MIMU/CDE ၂၀၂၀)</span>
+        </label>
+        </section>
+
+        <section class="group" aria-labelledby="g_groupBounds">
+          <h3 class="group-title" id="g_groupBounds" data-i18n="groupBounds">နယ်နိမိတ်</h3>
+        <label class="toggle">
+          <input type="checkbox" id="toggleStates" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-states" aria-hidden="true"></span>
+          <span data-i18n="boundStates">တိုင်းဒေသကြီး/ပြည်နယ် နယ်နိမိတ်</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggleTowns">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="swatch swatch-towns" aria-hidden="true"></span>
+          <span data-i18n="boundTowns">မြို့နယ် နယ်နိမိတ်</span>
+        </label>
+        </section>
+
+        <div class="field">
+          <label for="opacity" data-i18n="opacity">အလွှာ ထင်ရှားမှု (Opacity)</label>
+          <div class="range-row">
+            <input type="range" id="opacity" min="10" max="100" step="5" value="100">
+            <output id="opacityOut" for="opacity">100%</output>
+          </div>
+        </div>
+
+        <button type="button" class="btn" id="locateBtn" data-i18n="locate">ကျွန်ုပ်၏တည်နေရာ</button>
+
+        <details class="info" id="rankings">
+          <summary data-i18n="topAffected">ထိခိုက်မှုအများဆုံး မြို့နယ်များ</summary>
+          <h3 data-i18n="floodLayer">ရေကြီးမြုပ်နှံမှု</h3>
+          <ol id="topFlood" class="rank"></ol>
+          <h3 data-i18n="slideLayer">တောင်ပြိုအန္တရာယ်</h3>
+          <ol id="topSlide" class="rank"></ol>
+          <h3 data-i18n="proneLayer">ရေကြီးဖူးသော နေရာများ (အတိတ်ဒေတာ)</h3>
+          <ol id="topProne" class="rank"></ol>
+          <h3 data-i18n="topRainTitle">မိုးအများဆုံး ခန့်မှန်းရသည့် မြို့နယ်များ (နာရီ ၇၂)</h3>
+          <ol id="topRain" class="rank"></ol>
+        </details>
+
+        <details class="info" id="dataInfo">
+          <summary data-i18n="dataDetails">ဒေတာ အသေးစိတ်</summary>
+          <dl id="dataInfoList"></dl>
+        </details>
+
+        <details class="info public-info" id="liveAlerts">
+          <summary data-i18n="liveAlertsTitle">Live သတိပေးချက်များ</summary>
+          <p class="public-note" data-i18n="liveAlertsNote">အောက်ပါအချက်အလက်များသည် ရင်းမြစ်အလိုက် observation/alert ဖြစ်ပြီး အန္တရာယ်အားလုံးကို မဖုံးလွှမ်းနိုင်ပါ။</p>
+          <p class="public-updated" id="eventsUpdated"></p>
+          <h4 class="public-sub" data-i18n="dmhAlertsTitle">DMH တရားဝင် သတိပေးချက်များ</h4>
+          <p class="public-updated" id="dmhStatus"></p>
+          <div id="dmhAlerts" class="public-list"></div>
+          <h4 class="public-sub" data-i18n="eventsSubTitle">ငလျင်နှင့် အခြား ဖြစ်ရပ်များ</h4>
+          <div id="eventAlerts" class="public-list"></div>
+          <div class="source-links">
+            <a href="https://www.moezala.gov.mm/en" target="_blank" rel="noopener noreferrer">DMH Myanmar</a>
+            <a href="https://www.gdacs.org/" target="_blank" rel="noopener noreferrer">GDACS</a>
+            <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" target="_blank" rel="noopener noreferrer">USGS Earthquakes</a>
+            <a href="https://firms.modaps.eosdis.nasa.gov/active_fire/" target="_blank" rel="noopener noreferrer">NASA FIRMS</a>
+            <a href="https://www.rainviewer.com/" target="_blank" rel="noopener noreferrer">RainViewer Radar</a>
+            <a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener noreferrer">Open-Meteo Forecast</a>
+          </div>
+        </details>
+
+        <details class="info public-info" id="publicInfoPanel">
+          <summary data-i18n="publicInfoTitle">ရာသီဥတုနှင့် အများပြည်သူ သတင်းအချက်အလက်</summary>
+          <p class="public-note" data-i18n="publicInfoIntro">ခန့်မှန်းချက်နဲ့ တရားဝင်ရင်းမြစ်တွေကို သီးခြားပြထားပါတယ်။</p>
+          <p class="public-updated" id="publicInfoUpdated"></p>
+          <div id="weatherCards" class="public-list"></div>
+          <div id="ensoCard" class="public-card"></div>
+          <h3 data-i18n="dmhTitle">DMH တရားဝင် မိုးလေဝသသတင်း</h3>
+          <div id="dmhItems" class="public-list"></div>
+          <h3 data-i18n="healthTitle">ကျန်းမာရေးသတင်းရင်းမြစ်</h3>
+          <p class="public-note" data-i18n="healthNote">WHO ခေါင်းစဉ်များသည် အတည်ပြုထားသော ဒေသတွင်းရောဂါဖြစ်ပွားမှုစာရင်း မဟုတ်ပါ။</p>
+          <div id="healthItems" class="public-list"></div>
+          <h3 data-i18n="quakeTitle">မကြာသေးမီက ငလျင်များ</h3>
+          <div id="quakeItems" class="public-list"></div>
+          <p class="public-note" data-i18n="publicDisclaimer">ဤအပိုင်းသည် တရားဝင်သတိပေးချက် မဟုတ်ပါ။ မူရင်းရင်းမြစ်ကို အတည်ပြုပါ။</p>
+        </details>
+
+        <p class="disclaimer" data-i18n="disclaimer"></p>
+      </aside>
+
+      <details class="legend glass" id="legend" open>
+        <summary data-i18n="legend">အညွှန်း</summary>
+        <ul>
+          <li data-layer="flood"><span class="swatch swatch-flood"></span><span data-i18n="legFlood">ရေကြီးမြုပ်နှံသည့်နေရာ</span></li>
+          <li data-layer="landslide"><span class="swatch swatch-high"></span><span data-i18n="legHigh">တောင်ပြိုအန္တရာယ် မြင့်</span></li>
+          <li data-layer="landslide"><span class="swatch swatch-mod"></span><span data-i18n="legMod">တောင်ပြိုအန္တရာယ် အလယ်အလတ်</span></li>
+          <li data-layer="landslide"><span class="swatch swatch-low"></span><span data-i18n="legLow">တောင်ပြိုအန္တရာယ် နိမ့်</span></li>
+          <li data-layer="floodprone"><span class="swatch swatch-prone"></span><span data-i18n="legProne">ရေကြီးဖူးသောနေရာ (အတိတ်ဒေတာ)</span></li>
+          <li data-layer="susceptibility"><span class="swatch swatch-susc"></span><span data-i18n="legSusc">မြေမျက်နှာပြင် စောက်ကြီးသည့်နေရာ</span></li>
+          <li data-layer="rain"><span class="dot dot-rain1"></span><span data-i18n="legRain1">မိုးရေ သတိထားရန်</span></li>
+          <li data-layer="rain"><span class="dot dot-rain2"></span><span data-i18n="legRain2">မိုးရေ သတိပေး</span></li>
+          <li data-layer="rain"><span class="dot dot-rain3"></span><span data-i18n="legRain3">မိုးရေ အလွန်အန္တရာယ်</span></li>
+          <li data-layer="dmh"><span class="swatch swatch-dmh"></span><span data-i18n="legDmh">DMH သတိပေးထားသော တိုင်း/ပြည်နယ်</span></li>
+          <li data-layer="hospitals"><span class="dot dot-hospital"></span><span data-i18n="legHospital">ဆေးရုံ (၂၀၂၀ ဒေတာ)</span></li>
+          <li data-layer="river"><span class="dot dot-r0"></span><span data-i18n="legRiver0">မြစ်ရေ ပုံမှန်</span></li>
+          <li data-layer="river"><span class="dot dot-r1"></span><span data-i18n="legRiver1">မြစ်ရေ မြင့်လာ</span></li>
+          <li data-layer="river"><span class="dot dot-r2"></span><span data-i18n="legRiver2">မြစ်ရေ ကြီး</span></li>
+          <li data-layer="river"><span class="dot dot-r3"></span><span data-i18n="legRiver3">မြစ်ရေ အလွန်ကြီး</span></li>
+          <li data-layer="events"><span class="swatch swatch-events"></span><span data-i18n="eventsLayer">ငလျင် / ဘေးအန္တရာယ် ဖြစ်ပွားမှုများ</span></li>
+          <li data-layer="radar"><span class="swatch swatch-radar"></span><span data-i18n="radarLayer">မိုးရွာသွန်းမှု Radar (နောက်ဆုံး ၂ နာရီ)</span></li>
+        </ul>
+      </details>
+
+      <div class="intro-backdrop" id="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle" hidden>
+        <div class="intro-card">
+          <h2 id="introTitle" data-i18n="introTitle">မြေပုံကို ဘယ်လိုဖတ်မလဲ</h2>
+          <p class="intro-lead" data-i18n="introLead">ဒီမြေပုံက ကြိုတင်ဂရုစိုက်နိုင်ရန် အချက်အလက်တွေကို စုပေါင်းပြထားတာပါ။ စိတ်လှုပ်ရှားစရာ မလိုပါ၊ တစ်ဆင့်ချင်း ကြည့်နိုင်ပါတယ်။</p>
+          <ul class="intro-list">
+            <li data-i18n="intro1">အရောင်က အဆင့်ကို ပြတာပါ။ အဝါ = သတိထားရန်၊ လိမ္မော် = သတိပြုရန်၊ အုတ်နီရောင် = အထူးသတိပြုရန်။ အရောင်မပါရင် အထူးသတိပေးစရာ မတွေ့သေးဟု ဆိုလိုပါတယ်။</li>
+            <li data-i18n="intro2">မြေပုံပေါ် နေရာတစ်ခုကို နှိပ်ရင် အသေးစိတ်နဲ့ အဓိပ္ပာယ်ကို ဖတ်နိုင်ပါတယ်။</li>
+            <li data-i18n="intro3">ခန့်မှန်းချက်တွေက ကွန်ပျူတာ တွက်ချက်ထားတာ ဖြစ်ပြီး တရားဝင်သတိပေးချက် မဟုတ်ပါ။ DMH နဲ့ ဒေသအာဏာပိုင်ရဲ့ ကြေညာချက်ကို အမြဲ ဦးစားပေးပါ။</li>
+            <li data-i18n="intro4">ဒေတာ မပေါ်သေးတာ၊ ရယူမှု မအောင်မြင်တာက "အန္တရာယ်မရှိဘူး" လို့ မဆိုလိုပါ။ မသေချာရင် တရားဝင်ရင်းမြစ်ကို တိုက်ရိုက်ကြည့်ပါ။</li>
+          </ul>
+          <button type="button" class="btn" id="introOk" data-i18n="introOk">နားလည်ပါပြီ</button>
+        </div>
+      </div>
+
+      <div class="loader" id="loader" role="status">
+        <div class="spinner" aria-hidden="true"></div>
+        <span data-i18n="loading">ဒေတာ ရယူနေပါသည်</span>
+      </div>
+    </main>
+  </div>
+
+  <noscript>
+    <p class="noscript-warning">This map needs JavaScript. ဤမြေပုံသည် JavaScript လိုအပ်ပါသည်။</p>
+  </noscript>
+
+  <script src="js/leaflet-loader.js?v=20261014-5"></script>
+</body>
+</html>

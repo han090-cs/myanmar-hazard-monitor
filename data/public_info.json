@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "generated_utc": null,
+  "source_checks": {},
+  "sources": {
+    "weather": {"name": "Open-Meteo Forecast API", "url": "https://open-meteo.com/en/docs", "kind": "forecast"},
+    "dmh": {"name": "Myanmar Department of Meteorology and Hydrology (DMH)", "url": "https://www.moezala.gov.mm/index.php/en", "kind": "official_bulletins"},
+    "enso": {"name": "NOAA Climate Prediction Center ENSO Diagnostic Discussion", "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml", "kind": "climate_outlook"},
+    "health": {"name": "WHO South-East Asia: outbreaks and emergencies", "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies", "kind": "health_source"},
+    "earthquakes": {"name": "USGS Earthquake Hazards Program", "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson", "kind": "earthquake_feed"}
+  },
+  "weather": {"status": "unavailable", "updated_utc": null, "cities": []},
+  "enso": {"status": "unavailable", "updated_utc": null, "title": "ENSO update not yet retrieved", "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"},
+  "dmh": {"status": "unavailable", "updated_utc": null, "items": [], "url": "https://www.moezala.gov.mm/index.php/en"},
+  "health": {"status": "unavailable", "updated_utc": null, "items": [], "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies"},
+  "earthquakes": {"status": "unavailable", "updated_utc": null, "items": [], "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"},
+  "disclaimer": "Forecast-based risk screening and third-party source summaries; not official warnings or a substitute for local authorities."
+}

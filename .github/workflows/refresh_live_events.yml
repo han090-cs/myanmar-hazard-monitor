@@ -1,0 +1,94 @@
+name: Refresh live disaster events
+
+on:
+  schedule:
+    # Independent of the heavier satellite processing workflow.
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-disaster-events
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install lightweight dependency
+        run: python -m pip install 'requests>=2.31.0'
+
+      - name: Fetch USGS, GDACS, Open-Meteo forecast screening and optional NASA FIRMS events
+        id: fetch
+        continue-on-error: true
+        env:
+          NASA_FIRMS_MAP_KEY: ${{ secrets.NASA_FIRMS_MAP_KEY }}
+        run: python scripts/fetch_disaster_events.py
+
+      - name: Commit only meaningful feed changes
+        env:
+          FETCH_OUTCOME: ${{ steps.fetch.outcome }}
+        run: |
+          set -euo pipefail
+          if [ "$FETCH_OUTCOME" != "success" ]; then
+            echo "Primary event feeds failed; keep the last published event snapshot."
+            git checkout -- data/disaster_events.json
+            exit 0
+          fi
+          python - <<'PY'
+          import json, subprocess, sys
+          from pathlib import Path
+          path = Path('data/disaster_events.json')
+          try:
+              before = json.loads(subprocess.check_output(['git','show','HEAD:data/disaster_events.json'], text=True))
+              after = json.loads(path.read_text(encoding='utf-8'))
+          except Exception as exc:
+              print('Could not compare event snapshots:', exc)
+              sys.exit(1)
+          def normalize(value):
+              value = json.loads(json.dumps(value))
+              value.pop('generated_utc', None)
+              value.pop('checked_utc', None)
+              for item in (value.get('source_checks') or {}).values():
+                  item.pop('checked_utc', None)
+                  item.pop('message', None)
+              return value
+          primary = after.get('source_checks', {})
+          if all(primary.get(k, {}).get('status') == 'error' for k in ('usgs','gdacs','weather_forecast')):
+              print('Both primary feeds failed; discard failed check snapshot.')
+              path.write_text(json.dumps(before, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+              sys.exit(0)
+          if normalize(before) == normalize(after):
+              print('No meaningful event/source changes; avoid a timestamp-only commit.')
+              path.write_text(json.dumps(before, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          else:
+              print('Event list or source health changed; publish updated snapshot.')
+          PY
+          git add data/disaster_events.json
+          if git diff --cached --quiet; then
+            echo "No event changes to commit."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "chore(data): refresh live disaster events"
+          for attempt in 1 2 3; do
+            if git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            git rebase --abort >/dev/null 2>&1 || true
+            sleep $((attempt * 5))
+          done
+          echo 'Failed to publish event snapshot after retries.' >&2
+          exit 1

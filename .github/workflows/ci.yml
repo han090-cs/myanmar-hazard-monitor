@@ -1,0 +1,101 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/**"
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Python syntax
+        run: python -m py_compile scripts/generate_hazard_data.py scripts/make_demo.py scripts/fetch_river_forecast.py scripts/fetch_public_info.py scripts/fetch_disaster_events.py scripts/fetch_rain_forecast.py scripts/import_weather_site_data.py scripts/build_reference_data.py
+
+      - name: Offline self-test (geometry post-processing)
+        run: python scripts/generate_hazard_data.py --selftest
+
+      - name: Offline self-test (river forecast maths)
+        run: python scripts/fetch_river_forecast.py --selftest
+
+      - name: Offline self-test (public information parsing and risk thresholds)
+        run: python scripts/fetch_public_info.py --selftest
+
+      - name: Offline self-test (weather-site data import)
+        run: python scripts/import_weather_site_data.py --selftest
+
+      - name: Offline self-test (rain forecast maths)
+        run: python scripts/fetch_rain_forecast.py --selftest
+
+      - name: Offline self-test (disaster event feed geometry)
+        run: python scripts/fetch_disaster_events.py --selftest
+
+      - name: JavaScript syntax
+        run: |
+          node --check js/app.js
+          node --check js/repair-worker.js
+          node --check js/leaflet-css-fallback.js
+          node --check js/leaflet-loader.js
+
+      - name: Check local site assets
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlsplit
+
+          class LocalAssetParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.paths = []
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  value = attrs.get("src") if tag == "script" else attrs.get("href") if tag == "link" else None
+                  if not value or value.startswith(("http://", "https://", "//", "data:")):
+                      return
+                  if tag == "link" and attrs.get("rel") not in {"stylesheet", "icon", "apple-touch-icon", "manifest"}:
+                      return
+                  self.paths.append(urlsplit(value).path)
+
+          parser = LocalAssetParser()
+          parser.feed(Path("index.html").read_text(encoding="utf-8"))
+          # Include assets loaded dynamically, which the HTML parser cannot see.
+          parser.paths.extend(["js/app.js", "js/repair-worker.js", "js/leaflet-css-fallback.js", "js/leaflet-loader.js"])
+          missing = [path for path in parser.paths if not Path(path.lstrip("/")).is_file()]
+          if missing:
+              raise SystemExit("Missing local assets: " + ", ".join(missing))
+          print(f"All {len(parser.paths)} local assets referenced by index.html exist.")
+          PY
+
+      - name: Data and manifest files are valid JSON
+        run: |
+          python - <<'EOF'
+          import json
+          for path in ["data/flood_zones.geojson", "data/landslide_zones.geojson",
+                       "data/landslide_susceptibility.geojson", "data/river_forecast.json", "data/rain_forecast.json", "data/hospitals.geojson", "data/official_alerts.json", "data/ref/dmh_river_stations.json",
+                       "data/flood_prone.geojson", "data/flood_prone_stats.json",
+                       "data/ref/myanmar_outline.geojson", "data/ref/admin3_mmr.geojson", "data/ref/admin1_mmr.geojson",
+                       "data/summary.json", "data/metadata.json", "data/public_info.json", "data/disaster_events.json", "manifest.webmanifest"]:
+              json.load(open(path, encoding="utf-8"))
+              print("ok", path)
+          EOF
+
+      - name: Demo page builds
+        run: python scripts/make_demo.py

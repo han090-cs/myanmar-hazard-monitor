@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "generated_utc": null,
+  "admin_level": null,
+  "satellite": {
+    "sensor": "Sentinel-1 IW GRD (VV+VH)",
+    "latest_scene_utc": null,
+    "scene_count": 0,
+    "window_start_utc": null,
+    "window_end_utc": null,
+    "baseline_period": null,
+    "last_checked_utc": null
+  },
+  "rainfall": {
+    "source": null,
+    "window_start_utc": null,
+    "window_end_utc": null,
+    "data_age_days": null,
+    "max_7d_mm": null,
+    "stale": false
+  },
+  "flood": {
+    "updated_utc": null,
+    "total_area_ha": null,
+    "polygon_count": 0,
+    "townships_affected": 0,
+    "top_townships": [],
+    "by_state_region": []
+  },
+  "landslide": {
+    "updated_utc": null,
+    "high_ha": null,
+    "moderate_ha": null,
+    "low_ha": null,
+    "polygon_count": 0,
+    "townships_warned": 0,
+    "townships_high": 0,
+    "townships_moderate": 0,
+    "townships_low": 0,
+    "top_townships": []
+  }
+}

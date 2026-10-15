@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "generated_utc": null,
+  "source": "GloFAS via Open-Meteo Flood API",
+  "forecast_days": 30,
+  "points": []
+}

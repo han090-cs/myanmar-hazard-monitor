@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "generated_utc": null,
+  "checked_utc": null,
+  "coverage": {
+    "west": 92,
+    "south": 9,
+    "east": 102,
+    "north": 29.5
+  },
+  "source_checks": {},
+  "sources": {
+    "usgs": {
+      "name": "USGS Earthquake Catalog",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php",
+      "type": "observed"
+    },
+    "gdacs": {
+      "name": "Global Disaster Alert and Coordination System (GDACS)",
+      "url": "https://www.gdacs.org/xml/rss.xml",
+      "type": "reported_alert"
+    },
+    "firms": {
+      "name": "NASA FIRMS VIIRS active-fire detections",
+      "url": "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+      "type": "satellite_detection"
+    }
+  },
+  "events": [],
+  "disclaimer": "No live events have been fetched yet. Empty data is not proof that no hazard exists."
+}
