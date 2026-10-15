@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-15T15:20:03Z",
-  "checked_utc": "2026-10-15T15:20:03Z",
+  "generated_utc": "2026-10-15T19:22:53Z",
+  "checked_utc": "2026-10-15T19:22:53Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -12,22 +12,22 @@
     "usgs": {
       "status": "ok",
       "count": 8,
-      "checked_utc": "2026-10-15T15:19:58Z"
+      "checked_utc": "2026-10-15T19:22:50Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-15T15:20:01Z"
+      "checked_utc": "2026-10-15T19:22:53Z"
     },
     "weather_forecast": {
       "status": "ok",
       "count": 9,
-      "checked_utc": "2026-10-15T15:20:03Z"
+      "checked_utc": "2026-10-15T19:22:53Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-15T15:20:03Z"
+      "checked_utc": "2026-10-15T19:22:53Z"
     }
   },
   "sources": {
@@ -54,17 +54,17 @@
   },
   "events": [
     {
-      "id": "openmeteo:yangon:2026-10-17:uv",
+      "id": "openmeteo:dawei:2026-10-17:uv",
       "kind": "weather_risk",
       "hazard_type": "uv",
       "risk_level": "moderate",
-      "title": "Yangon",
-      "city": "Yangon",
-      "city_my": "ရန်ကုန်",
+      "title": "Dawei",
+      "city": "Dawei",
+      "city_my": "ထားဝယ်",
       "risk_title_en": "Very high UV screening",
       "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
-      "lat": 16.8661,
-      "lon": 96.1951,
+      "lat": 14.0823,
+      "lon": 98.1959,
       "time_utc": "2026-10-17T00:00:00Z",
       "forecast_date": "2026-10-17",
       "forecast_lead_days": 2,
@@ -97,7 +97,7 @@
       "url": "https://open-meteo.com/en/docs",
       "source": "Open-Meteo forecast-based hazard screening",
       "status": "forecast",
-      "details": "Maximum UV index forecast 8.5; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
+      "details": "Maximum UV index forecast 8.4; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
     },
     {
       "id": "openmeteo:yangon:2026-10-16:uv",
