@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-15T19:22:53Z",
-  "checked_utc": "2026-10-15T19:22:53Z",
+  "generated_utc": "2026-10-15T22:40:34Z",
+  "checked_utc": "2026-10-15T22:40:34Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -11,23 +11,23 @@
   "source_checks": {
     "usgs": {
       "status": "ok",
-      "count": 8,
-      "checked_utc": "2026-10-15T19:22:50Z"
+      "count": 9,
+      "checked_utc": "2026-10-15T22:40:22Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-15T19:22:53Z"
+      "checked_utc": "2026-10-15T22:40:24Z"
     },
     "weather_forecast": {
       "status": "ok",
       "count": 9,
-      "checked_utc": "2026-10-15T19:22:53Z"
+      "checked_utc": "2026-10-15T22:40:34Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-15T19:22:53Z"
+      "checked_utc": "2026-10-15T22:40:34Z"
     }
   },
   "sources": {
@@ -259,6 +259,21 @@
       "source": "Open-Meteo forecast-based hazard screening",
       "status": "forecast",
       "details": "Maximum UV index forecast 8.3; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
+    },
+    {
+      "id": "usgs:us6000u1sk",
+      "kind": "earthquake",
+      "title": "170 km SSE of Port Blair, India",
+      "lat": 10.1601,
+      "lon": 93.0837,
+      "time_utc": "2026-10-12T15:37:21Z",
+      "magnitude": 4.6,
+      "depth_km": 91.329,
+      "severity": "reported",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1sk",
+      "source": "USGS Earthquake Catalog",
+      "status": "observed",
+      "details": "Catalog event; check source for reviewed details."
     },
     {
       "id": "usgs:us6000u1nr",
