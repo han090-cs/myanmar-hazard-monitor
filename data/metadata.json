@@ -1,26 +1,88 @@
 {
   "schema_version": 1,
-  "last_run_utc": null,
-  "run_status": "never_run",
+  "last_run_utc": "2026-10-15T05:43:59Z",
+  "run_status": "error",
   "admin_level": null,
   "layers": {
     "flood": {
-      "status": "never_run",
-      "message": "The pipeline has not produced data yet.",
+      "status": "error",
+      "message": "ConfigError: Secret EE_SERVICE_ACCOUNT_KEY is empty or missing. See README.md.",
       "updated_utc": null,
-      "sha256": null
+      "sha256": null,
+      "last_checked_utc": "2026-10-15T05:43:59Z"
     },
     "landslide": {
-      "status": "never_run",
-      "message": "The pipeline has not produced data yet.",
+      "status": "error",
+      "message": "ConfigError: Secret EE_SERVICE_ACCOUNT_KEY is empty or missing. See README.md.",
       "updated_utc": null,
-      "sha256": null
+      "sha256": null,
+      "last_checked_utc": "2026-10-15T05:43:59Z"
     },
     "susceptibility": {
-      "status": "never_run",
-      "message": "The pipeline has not produced data yet.",
+      "status": "error",
+      "message": "ConfigError: Secret EE_SERVICE_ACCOUNT_KEY is empty or missing. See README.md.",
       "updated_utc": null,
-      "sha256": null
+      "sha256": null,
+      "last_checked_utc": "2026-10-15T05:43:59Z"
     }
+  },
+  "versions": {
+    "python": "3.11.17",
+    "shapely": "2.2.0",
+    "earthengine-api": "1.7.48"
+  },
+  "parameters": {
+    "bbox": [
+      92.1,
+      9.5,
+      101.2,
+      28.5
+    ],
+    "s1_lookback_days": 12,
+    "diff_threshold_db": -3.0,
+    "water_vv_db": -15.0,
+    "water_vh_db": -22.0,
+    "max_flood_slope_deg": 5.0,
+    "jrc_permanent_occurrence": 75.0,
+    "flood_scale_m": 100,
+    "filter_scale_m": 50,
+    "lee_enl": 4.4,
+    "ls_slope_min_deg": 20.0,
+    "ls_scale_m": 250,
+    "rain_window_days": 7,
+    "ls_rules": {
+      "low": [
+        [
+          50.0,
+          20.0
+        ]
+      ],
+      "moderate": [
+        [
+          100.0,
+          25.0
+        ],
+        [
+          150.0,
+          20.0
+        ],
+        [
+          75.0,
+          35.0
+        ]
+      ],
+      "high": [
+        [
+          150.0,
+          30.0
+        ],
+        [
+          250.0,
+          20.0
+        ]
+      ]
+    },
+    "simplify_tolerance": 0.001,
+    "max_file_bytes": 4800000
   }
 }

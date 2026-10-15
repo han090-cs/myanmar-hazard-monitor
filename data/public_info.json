@@ -1,18 +1,2012 @@
 {
   "schema_version": 1,
-  "generated_utc": null,
-  "source_checks": {},
-  "sources": {
-    "weather": {"name": "Open-Meteo Forecast API", "url": "https://open-meteo.com/en/docs", "kind": "forecast"},
-    "dmh": {"name": "Myanmar Department of Meteorology and Hydrology (DMH)", "url": "https://www.moezala.gov.mm/index.php/en", "kind": "official_bulletins"},
-    "enso": {"name": "NOAA Climate Prediction Center ENSO Diagnostic Discussion", "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml", "kind": "climate_outlook"},
-    "health": {"name": "WHO South-East Asia: outbreaks and emergencies", "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies", "kind": "health_source"},
-    "earthquakes": {"name": "USGS Earthquake Hazards Program", "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson", "kind": "earthquake_feed"}
+  "generated_utc": "2026-10-15T06:40:27Z",
+  "source_checks": {
+    "weather": {
+      "status": "ok",
+      "checked_utc": "2026-10-15T06:40:27Z",
+      "message": "Source fetched successfully."
+    },
+    "dmh": {
+      "status": "ok",
+      "checked_utc": "2026-10-15T06:40:27Z",
+      "message": "Source fetched successfully."
+    },
+    "enso": {
+      "status": "ok",
+      "checked_utc": "2026-10-15T06:40:27Z",
+      "message": "Source fetched successfully."
+    },
+    "health": {
+      "status": "ok",
+      "checked_utc": "2026-10-15T06:40:27Z",
+      "message": "Source fetched successfully."
+    },
+    "earthquakes": {
+      "status": "ok",
+      "checked_utc": "2026-10-15T06:40:27Z",
+      "message": "Source fetched successfully."
+    }
   },
-  "weather": {"status": "unavailable", "updated_utc": null, "cities": []},
-  "enso": {"status": "unavailable", "updated_utc": null, "title": "ENSO update not yet retrieved", "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"},
-  "dmh": {"status": "unavailable", "updated_utc": null, "items": [], "url": "https://www.moezala.gov.mm/index.php/en"},
-  "health": {"status": "unavailable", "updated_utc": null, "items": [], "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies"},
-  "earthquakes": {"status": "unavailable", "updated_utc": null, "items": [], "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"},
+  "sources": {
+    "weather": {
+      "name": "Open-Meteo Forecast API",
+      "url": "https://open-meteo.com/en/docs",
+      "kind": "forecast"
+    },
+    "dmh": {
+      "name": "Myanmar Department of Meteorology and Hydrology (DMH)",
+      "url": "https://www.moezala.gov.mm/index.php/en",
+      "kind": "official_bulletins"
+    },
+    "enso": {
+      "name": "NOAA Climate Prediction Center ENSO Diagnostic Discussion",
+      "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+      "kind": "climate_outlook"
+    },
+    "health": {
+      "name": "WHO South-East Asia: outbreaks and emergencies",
+      "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies",
+      "kind": "health_source"
+    },
+    "earthquakes": {
+      "name": "USGS Earthquake Hazards Program",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson",
+      "kind": "earthquake_feed"
+    }
+  },
+  "weather": {
+    "status": "ok",
+    "updated_utc": "2026-10-15T06:40:28Z",
+    "source": "Open-Meteo Forecast API",
+    "cities": [
+      {
+        "name": "Yangon",
+        "name_my": "ရန်ကုန်",
+        "latitude": 16.8661,
+        "longitude": 96.1951,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 30.5,
+            "precipitation_mm": 28.8,
+            "precipitation_probability_max": 95,
+            "wind_max_kmh": 11.5,
+            "uv_index_max": 7.7,
+            "weather_code": 96,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              },
+              {
+                "type": "heavy_rain",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 31.4,
+            "precipitation_mm": 2.9,
+            "precipitation_probability_max": 85,
+            "wind_max_kmh": 7.9,
+            "uv_index_max": 8.0,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "high"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 32.0,
+            "precipitation_mm": 3.6,
+            "precipitation_probability_max": 87,
+            "wind_max_kmh": 8.9,
+            "uv_index_max": 7.7,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 31.7,
+            "precipitation_mm": 5.2,
+            "precipitation_probability_max": 80,
+            "wind_max_kmh": 7.9,
+            "uv_index_max": 5.95,
+            "weather_code": 95,
+            "risks": []
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 31.8,
+            "precipitation_mm": 0.9,
+            "precipitation_probability_max": 67,
+            "wind_max_kmh": 6.4,
+            "uv_index_max": 7.85,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 32.0,
+            "precipitation_mm": 1.2,
+            "precipitation_probability_max": 55,
+            "wind_max_kmh": 7.5,
+            "uv_index_max": 7.6,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 33.5,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 57,
+            "wind_max_kmh": 8.5,
+            "uv_index_max": 7.65,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mandalay",
+        "name_my": "မန္တလေး",
+        "latitude": 21.9588,
+        "longitude": 96.0891,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 31.9,
+            "precipitation_mm": 6.3,
+            "precipitation_probability_max": 66,
+            "wind_max_kmh": 11.1,
+            "uv_index_max": 7.4,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 32.4,
+            "precipitation_mm": 0.1,
+            "precipitation_probability_max": 27,
+            "wind_max_kmh": 6.5,
+            "uv_index_max": 7.2,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 33.5,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 24,
+            "wind_max_kmh": 10.5,
+            "uv_index_max": 7.35,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 33.8,
+            "precipitation_mm": 0.3,
+            "precipitation_probability_max": 39,
+            "wind_max_kmh": 8.5,
+            "uv_index_max": 7.25,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 33.8,
+            "precipitation_mm": 1.2,
+            "precipitation_probability_max": 80,
+            "wind_max_kmh": 7.0,
+            "uv_index_max": 7.2,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 33.7,
+            "precipitation_mm": 0.9,
+            "precipitation_probability_max": 63,
+            "wind_max_kmh": 6.7,
+            "uv_index_max": 6.9,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 34.0,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 24,
+            "wind_max_kmh": 7.3,
+            "uv_index_max": 6.95,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nay Pyi Taw",
+        "name_my": "နေပြည်တော်",
+        "latitude": 19.7633,
+        "longitude": 96.0785,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 31.5,
+            "precipitation_mm": 5.3,
+            "precipitation_probability_max": 71,
+            "wind_max_kmh": 9.5,
+            "uv_index_max": 7.8,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 31.2,
+            "precipitation_mm": 2.4,
+            "precipitation_probability_max": 74,
+            "wind_max_kmh": 9.9,
+            "uv_index_max": 7.7,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 32.0,
+            "precipitation_mm": 3.2,
+            "precipitation_probability_max": 79,
+            "wind_max_kmh": 9.6,
+            "uv_index_max": 7.65,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 31.1,
+            "precipitation_mm": 7.5,
+            "precipitation_probability_max": 92,
+            "wind_max_kmh": 7.6,
+            "uv_index_max": 7.7,
+            "weather_code": 96,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 32.9,
+            "precipitation_mm": 5.1,
+            "precipitation_probability_max": 61,
+            "wind_max_kmh": 8.5,
+            "uv_index_max": 7.6,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 32.7,
+            "precipitation_mm": 4.5,
+            "precipitation_probability_max": 63,
+            "wind_max_kmh": 6.6,
+            "uv_index_max": 7.3,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 32.2,
+            "precipitation_mm": 1.8,
+            "precipitation_probability_max": 55,
+            "wind_max_kmh": 8.6,
+            "uv_index_max": 7.3,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Taunggyi",
+        "name_my": "တောင်ကြီး",
+        "latitude": 20.7892,
+        "longitude": 97.0378,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 24.0,
+            "precipitation_mm": 11.4,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 8.3,
+            "uv_index_max": 7.45,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 24.7,
+            "precipitation_mm": 0.7,
+            "precipitation_probability_max": 82,
+            "wind_max_kmh": 9.4,
+            "uv_index_max": 7.65,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 25.2,
+            "precipitation_mm": 3.2,
+            "precipitation_probability_max": 94,
+            "wind_max_kmh": 5.9,
+            "uv_index_max": 7.75,
+            "weather_code": 55,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 25.7,
+            "precipitation_mm": 4.0,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 6.3,
+            "uv_index_max": 7.5,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 25.8,
+            "precipitation_mm": 9.0,
+            "precipitation_probability_max": 98,
+            "wind_max_kmh": 5.1,
+            "uv_index_max": 7.6,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 26.0,
+            "precipitation_mm": 1.5,
+            "precipitation_probability_max": 76,
+            "wind_max_kmh": 3.7,
+            "uv_index_max": 7.35,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 26.0,
+            "precipitation_mm": 4.8,
+            "precipitation_probability_max": 67,
+            "wind_max_kmh": 3.9,
+            "uv_index_max": 7.15,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mawlamyine",
+        "name_my": "မော်လမြိုင်",
+        "latitude": 16.4905,
+        "longitude": 97.6283,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 32.3,
+            "precipitation_mm": 7.3,
+            "precipitation_probability_max": 94,
+            "wind_max_kmh": 13.3,
+            "uv_index_max": 7.95,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 32.1,
+            "precipitation_mm": 1.7,
+            "precipitation_probability_max": 89,
+            "wind_max_kmh": 9.2,
+            "uv_index_max": 7.95,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 33.0,
+            "precipitation_mm": 7.3,
+            "precipitation_probability_max": 91,
+            "wind_max_kmh": 10.3,
+            "uv_index_max": 7.95,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 32.9,
+            "precipitation_mm": 10.7,
+            "precipitation_probability_max": 57,
+            "wind_max_kmh": 12.2,
+            "uv_index_max": 7.4,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 33.3,
+            "precipitation_mm": 3.6,
+            "precipitation_probability_max": 63,
+            "wind_max_kmh": 7.3,
+            "uv_index_max": 7.85,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 33.6,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 42,
+            "wind_max_kmh": 8.9,
+            "uv_index_max": 7.65,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 33.8,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 41,
+            "wind_max_kmh": 11.1,
+            "uv_index_max": 7.65,
+            "weather_code": 45,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sittwe",
+        "name_my": "စစ်တွေ",
+        "latitude": 20.15,
+        "longitude": 92.9,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 31.2,
+            "precipitation_mm": 0.9,
+            "precipitation_probability_max": 84,
+            "wind_max_kmh": 11.4,
+            "uv_index_max": 7.5,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 30.8,
+            "precipitation_mm": 1.8,
+            "precipitation_probability_max": 80,
+            "wind_max_kmh": 13.6,
+            "uv_index_max": 7.35,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 31.3,
+            "precipitation_mm": 1.2,
+            "precipitation_probability_max": 80,
+            "wind_max_kmh": 14.2,
+            "uv_index_max": 7.6,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 31.0,
+            "precipitation_mm": 3.8,
+            "precipitation_probability_max": 91,
+            "wind_max_kmh": 17.2,
+            "uv_index_max": 7.6,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 31.3,
+            "precipitation_mm": 3.3,
+            "precipitation_probability_max": 84,
+            "wind_max_kmh": 10.3,
+            "uv_index_max": 7.35,
+            "weather_code": 55,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 31.9,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 71,
+            "wind_max_kmh": 10.3,
+            "uv_index_max": 7.15,
+            "weather_code": 1,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 31.9,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 25,
+            "wind_max_kmh": 6.5,
+            "uv_index_max": 7.3,
+            "weather_code": 2,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Pathein",
+        "name_my": "ပုသိမ်",
+        "latitude": 16.7792,
+        "longitude": 94.7321,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 30.8,
+            "precipitation_mm": 2.9,
+            "precipitation_probability_max": 93,
+            "wind_max_kmh": 12.0,
+            "uv_index_max": 8.0,
+            "weather_code": 80,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "high"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 31.3,
+            "precipitation_mm": 2.4,
+            "precipitation_probability_max": 88,
+            "wind_max_kmh": 9.9,
+            "uv_index_max": 7.9,
+            "weather_code": 80,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 32.1,
+            "precipitation_mm": 1.5,
+            "precipitation_probability_max": 94,
+            "wind_max_kmh": 11.1,
+            "uv_index_max": 7.2,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 31.1,
+            "precipitation_mm": 8.8,
+            "precipitation_probability_max": 88,
+            "wind_max_kmh": 12.2,
+            "uv_index_max": 7.4,
+            "weather_code": 96,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 31.3,
+            "precipitation_mm": 2.7,
+            "precipitation_probability_max": 86,
+            "wind_max_kmh": 11.8,
+            "uv_index_max": 7.75,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 31.9,
+            "precipitation_mm": 2.7,
+            "precipitation_probability_max": 89,
+            "wind_max_kmh": 9.6,
+            "uv_index_max": 5.95,
+            "weather_code": 95,
+            "risks": []
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 32.4,
+            "precipitation_mm": 1.8,
+            "precipitation_probability_max": 67,
+            "wind_max_kmh": 9.1,
+            "uv_index_max": 7.5,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Monywa",
+        "name_my": "မုံရွာ",
+        "latitude": 22.1086,
+        "longitude": 95.1358,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 31.1,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 31,
+            "wind_max_kmh": 11.5,
+            "uv_index_max": 7.45,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 31.5,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 16,
+            "wind_max_kmh": 3.8,
+            "uv_index_max": 7.35,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 32.4,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 22,
+            "wind_max_kmh": 8.7,
+            "uv_index_max": 7.35,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 32.9,
+            "precipitation_mm": 0.2,
+            "precipitation_probability_max": 25,
+            "wind_max_kmh": 11.9,
+            "uv_index_max": 7.25,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 33.1,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 37,
+            "wind_max_kmh": 7.9,
+            "uv_index_max": 7.3,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 32.3,
+            "precipitation_mm": 1.5,
+            "precipitation_probability_max": 49,
+            "wind_max_kmh": 6.2,
+            "uv_index_max": 7.05,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 33.1,
+            "precipitation_mm": 1.2,
+            "precipitation_probability_max": 23,
+            "wind_max_kmh": 5.2,
+            "uv_index_max": 7.05,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Myitkyina",
+        "name_my": "မြစ်ကြီးနား",
+        "latitude": 25.3833,
+        "longitude": 97.4,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 29.9,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 2,
+            "wind_max_kmh": 4.3,
+            "uv_index_max": 6.95,
+            "weather_code": 1,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 29.9,
+            "precipitation_mm": 0.5,
+            "precipitation_probability_max": 4,
+            "wind_max_kmh": 4.0,
+            "uv_index_max": 6.9,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 30.2,
+            "precipitation_mm": 0.2,
+            "precipitation_probability_max": 0,
+            "wind_max_kmh": 4.6,
+            "uv_index_max": 6.9,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 30.4,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 0,
+            "wind_max_kmh": 4.9,
+            "uv_index_max": 6.85,
+            "weather_code": 45,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 30.9,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 2,
+            "wind_max_kmh": 3.6,
+            "uv_index_max": 6.8,
+            "weather_code": 45,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 31.5,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 4,
+            "wind_max_kmh": 4.0,
+            "uv_index_max": 6.6,
+            "weather_code": 45,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 31.5,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 10,
+            "wind_max_kmh": 3.8,
+            "uv_index_max": 6.55,
+            "weather_code": 45,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hpa-An",
+        "name_my": "ဘားအံ",
+        "latitude": 16.889,
+        "longitude": 97.634,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 32.9,
+            "precipitation_mm": 17.5,
+            "precipitation_probability_max": 95,
+            "wind_max_kmh": 7.9,
+            "uv_index_max": 7.85,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 32.3,
+            "precipitation_mm": 2.1,
+            "precipitation_probability_max": 87,
+            "wind_max_kmh": 8.5,
+            "uv_index_max": 7.95,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 32.5,
+            "precipitation_mm": 5.3,
+            "precipitation_probability_max": 77,
+            "wind_max_kmh": 8.2,
+            "uv_index_max": 7.75,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 32.3,
+            "precipitation_mm": 5.3,
+            "precipitation_probability_max": 65,
+            "wind_max_kmh": 8.1,
+            "uv_index_max": 6.95,
+            "weather_code": 55,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 32.1,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 59,
+            "wind_max_kmh": 4.8,
+            "uv_index_max": 7.8,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 33.5,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 51,
+            "wind_max_kmh": 6.0,
+            "uv_index_max": 7.6,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 33.7,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 51,
+            "wind_max_kmh": 3.8,
+            "uv_index_max": 7.6,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dawei",
+        "name_my": "ထားဝယ်",
+        "latitude": 14.0823,
+        "longitude": 98.1959,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 31.7,
+            "precipitation_mm": 8.6,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 11.3,
+            "uv_index_max": 8.0,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "high"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 31.3,
+            "precipitation_mm": 2.0,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 7.4,
+            "uv_index_max": 8.05,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "high"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 32.2,
+            "precipitation_mm": 10.9,
+            "precipitation_probability_max": 99,
+            "wind_max_kmh": 9.9,
+            "uv_index_max": 7.95,
+            "weather_code": 96,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 32.6,
+            "precipitation_mm": 10.1,
+            "precipitation_probability_max": 98,
+            "wind_max_kmh": 8.4,
+            "uv_index_max": 7.05,
+            "weather_code": 80,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 32.3,
+            "precipitation_mm": 2.1,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 6.8,
+            "uv_index_max": 7.85,
+            "weather_code": 55,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 31.8,
+            "precipitation_mm": 1.8,
+            "precipitation_probability_max": 98,
+            "wind_max_kmh": 9.5,
+            "uv_index_max": 7.8,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 33.0,
+            "precipitation_mm": 2.4,
+            "precipitation_probability_max": 92,
+            "wind_max_kmh": 8.9,
+            "uv_index_max": 7.6,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Bago",
+        "name_my": "ပဲခူး",
+        "latitude": 17.3367,
+        "longitude": 96.4797,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 31.2,
+            "precipitation_mm": 13.4,
+            "precipitation_probability_max": 83,
+            "wind_max_kmh": 14.2,
+            "uv_index_max": 5.5,
+            "weather_code": 95,
+            "risks": []
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 31.6,
+            "precipitation_mm": 6.2,
+            "precipitation_probability_max": 85,
+            "wind_max_kmh": 5.8,
+            "uv_index_max": 7.95,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 32.4,
+            "precipitation_mm": 4.1,
+            "precipitation_probability_max": 78,
+            "wind_max_kmh": 6.6,
+            "uv_index_max": 7.75,
+            "weather_code": 80,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 32.1,
+            "precipitation_mm": 0.8,
+            "precipitation_probability_max": 76,
+            "wind_max_kmh": 8.2,
+            "uv_index_max": 7.25,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 32.4,
+            "precipitation_mm": 2.4,
+            "precipitation_probability_max": 42,
+            "wind_max_kmh": 6.3,
+            "uv_index_max": 6.85,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 32.8,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 47,
+            "wind_max_kmh": 7.1,
+            "uv_index_max": 7.6,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 33.2,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 43,
+            "wind_max_kmh": 6.7,
+            "uv_index_max": 7.65,
+            "weather_code": 45,
+            "risks": [
+              {
+                "type": "heat",
+                "level": "moderate"
+              },
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lashio",
+        "name_my": "လားရှိုး",
+        "latitude": 22.9359,
+        "longitude": 97.7498,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 25.0,
+            "precipitation_mm": 11.3,
+            "precipitation_probability_max": 98,
+            "wind_max_kmh": 7.6,
+            "uv_index_max": 7.45,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 26.8,
+            "precipitation_mm": 1.4,
+            "precipitation_probability_max": 60,
+            "wind_max_kmh": 5.4,
+            "uv_index_max": 7.35,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 27.8,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 18,
+            "wind_max_kmh": 6.8,
+            "uv_index_max": 7.35,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 28.4,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 24,
+            "wind_max_kmh": 6.5,
+            "uv_index_max": 7.3,
+            "weather_code": 3,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 27.9,
+            "precipitation_mm": 5.7,
+            "precipitation_probability_max": 90,
+            "wind_max_kmh": 6.3,
+            "uv_index_max": 7.05,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 27.3,
+            "precipitation_mm": 1.8,
+            "precipitation_probability_max": 65,
+            "wind_max_kmh": 6.7,
+            "uv_index_max": 6.9,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 27.6,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 29,
+            "wind_max_kmh": 3.1,
+            "uv_index_max": 7.05,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hakha",
+        "name_my": "ဟားခါး",
+        "latitude": 22.65,
+        "longitude": 93.6167,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 21.2,
+            "precipitation_mm": 7.4,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 7.8,
+            "uv_index_max": 7.8,
+            "weather_code": 81,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 22.1,
+            "precipitation_mm": 4.4,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 5.3,
+            "uv_index_max": 6.1,
+            "weather_code": 81,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 21.6,
+            "precipitation_mm": 3.1,
+            "precipitation_probability_max": 85,
+            "wind_max_kmh": 6.9,
+            "uv_index_max": 6.05,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 21.3,
+            "precipitation_mm": 17.3,
+            "precipitation_probability_max": 92,
+            "wind_max_kmh": 7.4,
+            "uv_index_max": 7.2,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 22.0,
+            "precipitation_mm": 10.5,
+            "precipitation_probability_max": 90,
+            "wind_max_kmh": 6.8,
+            "uv_index_max": 7.3,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 22.2,
+            "precipitation_mm": 10.2,
+            "precipitation_probability_max": 94,
+            "wind_max_kmh": 6.2,
+            "uv_index_max": 5.6,
+            "weather_code": 95,
+            "risks": []
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 22.2,
+            "precipitation_mm": 3.6,
+            "precipitation_probability_max": 59,
+            "wind_max_kmh": 4.9,
+            "uv_index_max": 6.95,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kyaing Tong",
+        "name_my": "ကျိုင်းတုံ",
+        "latitude": 21.3,
+        "longitude": 99.6,
+        "timezone": "Asia/Yangon",
+        "forecast": [
+          {
+            "date": "2026-10-15",
+            "temp_max_c": 29.5,
+            "precipitation_mm": 3.6,
+            "precipitation_probability_max": 100,
+            "wind_max_kmh": 9.3,
+            "uv_index_max": 7.7,
+            "weather_code": 55,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-16",
+            "temp_max_c": 28.5,
+            "precipitation_mm": 6.3,
+            "precipitation_probability_max": 98,
+            "wind_max_kmh": 7.1,
+            "uv_index_max": 7.45,
+            "weather_code": 95,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-17",
+            "temp_max_c": 27.2,
+            "precipitation_mm": 1.0,
+            "precipitation_probability_max": 94,
+            "wind_max_kmh": 5.2,
+            "uv_index_max": 7.6,
+            "weather_code": 53,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-18",
+            "temp_max_c": 28.8,
+            "precipitation_mm": 0.9,
+            "precipitation_probability_max": 99,
+            "wind_max_kmh": 10.0,
+            "uv_index_max": 7.3,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-19",
+            "temp_max_c": 29.5,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 92,
+            "wind_max_kmh": 2.2,
+            "uv_index_max": 7.45,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-20",
+            "temp_max_c": 30.6,
+            "precipitation_mm": 0.0,
+            "precipitation_probability_max": 82,
+            "wind_max_kmh": 4.1,
+            "uv_index_max": 7.4,
+            "weather_code": 0,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          },
+          {
+            "date": "2026-10-21",
+            "temp_max_c": 29.6,
+            "precipitation_mm": 0.6,
+            "precipitation_probability_max": 65,
+            "wind_max_kmh": 2.1,
+            "uv_index_max": 7.05,
+            "weather_code": 51,
+            "risks": [
+              {
+                "type": "uv",
+                "level": "moderate"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "method_note": "Threshold-based weather-risk screening, not an official warning; see source for model and uncertainty."
+  },
+  "enso": {
+    "status": "ok",
+    "updated_utc": "2026-10-15T06:40:30Z",
+    "title": "NOAA ENSO Diagnostic Discussion",
+    "alert_status": "El Niño Advisory",
+    "issued_date": null,
+    "synopsis": "El Niño continues to strengthen, with a strong-to-very strong El Niño likely through January-March 2027 (remaining greater than an 83% chance). El Niño strengthened further last month, with sea surface temperature anomalies exceeding +4.0°C in portions of the eastern equatorial Pacific [Fig. 1] . Most Niño indices increased in the past month, reaching +2.1°C in Niño-3.4, +3.0°C in Niño-3, and +3.9°C in Niño-1+2 [Fig. 2] . The equatorial subsurface temperature index (average from 180°-100°W) was well above average [Fig. 3] , reflecting a deeper-than-average thermocline. Subsurface temperatures remained in excess of +10.0°C at depth in the eastern Pacific Ocean [Fig. 4] . Low-level westerly wind anomalies and upper-level easterly wind anomalies stretched from the western to the east-central equatorial Pacific. Enhanced convection and rainfall persisted from the central to the eastern Pacif",
+    "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+    "source": "NOAA Climate Prediction Center ENSO Diagnostic Discussion"
+  },
+  "dmh": {
+    "status": "ok",
+    "updated_utc": "2026-10-15T06:40:30Z",
+    "items": [
+      {
+        "title": "Daily Weather Forecast",
+        "url": "https://www.moezala.gov.mm/en/daily-weather-forecast",
+        "source": "DMH"
+      },
+      {
+        "title": "10 Days Weather Forecast",
+        "url": "https://www.moezala.gov.mm/en/10days-weather-forecast",
+        "source": "DMH"
+      },
+      {
+        "title": "Monthly Weather Forecast",
+        "url": "https://www.moezala.gov.mm/en/monthly-weather-forecast",
+        "source": "DMH"
+      },
+      {
+        "title": "Daily Water Level Forecast",
+        "url": "https://www.moezala.gov.mm/en/daily-water-level-forecast",
+        "source": "DMH"
+      },
+      {
+        "title": "10 Days Water Level Forecast",
+        "url": "https://www.moezala.gov.mm/en/10days-water-level-forecast",
+        "source": "DMH"
+      },
+      {
+        "title": "Monthly Water Level Forecast",
+        "url": "https://www.moezala.gov.mm/en/monthly-water-level-forecast",
+        "source": "DMH"
+      },
+      {
+        "title": "(Early/Mid/Late)/Winter Monsoon Weather Forecast",
+        "url": "https://www.moezala.gov.mm/en/monsoon-weather-forecast",
+        "source": "DMH"
+      },
+      {
+        "title": "(Early/Mid/Late)/Winter monsoon Water Level Forecast",
+        "url": "https://www.moezala.gov.mm/en/monsoon-water-level-forecast",
+        "source": "DMH"
+      }
+    ],
+    "url": "https://www.moezala.gov.mm/index.php/en",
+    "page_text_checked": true,
+    "note": "Headlines/links collected from the official DMH page; check the bulletin itself for issue time and location."
+  },
+  "health": {
+    "status": "ok",
+    "updated_utc": "2026-10-15T06:40:30Z",
+    "items": [
+      {
+        "title": "Neglected tropical diseases",
+        "url": "https://www.who.int/southeastasia/health-topics/neglected-tropical-diseases",
+        "source": "WHO"
+      },
+      {
+        "title": "Noncommunicable diseases",
+        "url": "https://www.who.int/southeastasia/health-topics/noncommunicable-diseases",
+        "source": "WHO"
+      },
+      {
+        "title": "Department of Health Promotion, Disease Prevention & Control (HDC)",
+        "url": "https://www.who.int/southeastasia/navigation/mega-menu/our-work/department-of-health-promotion-disease-prevention-and-control",
+        "source": "WHO"
+      },
+      {
+        "title": "Department of Healthier Populations and Noncommunicable Diseases (HPN)",
+        "url": "https://www.who.int/southeastasia/navigation/mega-menu/our-work/department-of-health-promotion-disease-prevention-and-control/noncommunicable-disease-and-mental-health",
+        "source": "WHO"
+      },
+      {
+        "title": "Outbreaks and emergencies",
+        "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies",
+        "source": "WHO"
+      },
+      {
+        "title": "Pandemic and Epidemic Management",
+        "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies/pem",
+        "source": "WHO"
+      },
+      {
+        "title": "Myanmar earthquake response 2025",
+        "url": "https://www.who.int/southeastasia/navigation/mega-menu/emergencies/latest/myanmar-earthquake-response-2025",
+        "source": "WHO"
+      },
+      {
+        "title": "Nipah virus disease - India",
+        "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON609",
+        "source": "WHO"
+      }
+    ],
+    "url": "https://www.who.int/southeastasia/outbreaks-and-emergencies",
+    "note": "These are source-page links, not automatically confirmed local outbreak alerts. Verify the original WHO bulletin."
+  },
+  "earthquakes": {
+    "status": "ok",
+    "updated_utc": "2026-10-15T06:40:31Z",
+    "items": [
+      {
+        "title": "M 4.8 - 56 km E of Yairipok, India",
+        "magnitude": 4.8,
+        "latitude": 24.7203,
+        "longitude": 94.6022,
+        "time_utc": "2026-10-12T01:28:20Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1nr",
+        "place": "56 km E of Yairipok, India"
+      },
+      {
+        "title": "M 4.5 - 65 km NNE of Mawlaik, Burma (Myanmar)",
+        "magnitude": 4.5,
+        "latitude": 24.1974,
+        "longitude": 94.6214,
+        "time_utc": "2026-10-07T03:29:21Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0p3",
+        "place": "65 km NNE of Mawlaik, Burma (Myanmar)"
+      },
+      {
+        "title": "M 4.6 - 29 km SSE of Tezpur, India",
+        "magnitude": 4.6,
+        "latitude": 26.3792,
+        "longitude": 92.8855,
+        "time_utc": "2026-10-05T22:53:41Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzth",
+        "place": "29 km SSE of Tezpur, India"
+      },
+      {
+        "title": "M 4.6 - 121 km WNW of Chauk, Burma (Myanmar)",
+        "magnitude": 4.6,
+        "latitude": 21.3382,
+        "longitude": 93.7503,
+        "time_utc": "2026-10-04T05:55:06Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzh0",
+        "place": "121 km WNW of Chauk, Burma (Myanmar)"
+      },
+      {
+        "title": "M 4.9 - 72 km NE of Sittwe, Burma (Myanmar)",
+        "magnitude": 4.9,
+        "latitude": 20.6061,
+        "longitude": 93.3991,
+        "time_utc": "2026-10-03T18:12:46Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzdp",
+        "place": "72 km NE of Sittwe, Burma (Myanmar)"
+      },
+      {
+        "title": "M 4.5 - 56 km SSE of Mawlaik, Burma (Myanmar)",
+        "magnitude": 4.5,
+        "latitude": 23.1453,
+        "longitude": 94.5469,
+        "time_utc": "2026-10-02T16:55:33Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz6z",
+        "place": "56 km SSE of Mawlaik, Burma (Myanmar)"
+      },
+      {
+        "title": "M 4.6 - 19 km NW of Yongning, China",
+        "magnitude": 4.6,
+        "latitude": 27.9739,
+        "longitude": 100.5554,
+        "time_utc": "2026-09-27T18:29:58Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txzx",
+        "place": "19 km NW of Yongning, China"
+      },
+      {
+        "title": "M 4.2 - 36 km SW of Monywa, Burma (Myanmar)",
+        "magnitude": 4.2,
+        "latitude": 21.8451,
+        "longitude": 94.9216,
+        "time_utc": "2026-09-25T02:13:56Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz30",
+        "place": "36 km SW of Monywa, Burma (Myanmar)"
+      }
+    ],
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson",
+    "note": "USGS feed filtered to a broad Myanmar bounding box and magnitude 2.5+; completeness varies by catalog."
+  },
   "disclaimer": "Forecast-based risk screening and third-party source summaries; not official warnings or a substitute for local authorities."
 }
