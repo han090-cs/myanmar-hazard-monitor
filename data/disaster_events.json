@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-15T10:17:45Z",
-  "checked_utc": "2026-10-15T10:17:45Z",
+  "generated_utc": "2026-10-15T15:20:03Z",
+  "checked_utc": "2026-10-15T15:20:03Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -12,22 +12,22 @@
     "usgs": {
       "status": "ok",
       "count": 8,
-      "checked_utc": "2026-10-15T10:17:42Z"
+      "checked_utc": "2026-10-15T15:19:58Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-15T10:17:44Z"
+      "checked_utc": "2026-10-15T15:20:01Z"
     },
     "weather_forecast": {
       "status": "ok",
-      "count": 7,
-      "checked_utc": "2026-10-15T10:17:45Z"
+      "count": 9,
+      "checked_utc": "2026-10-15T15:20:03Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-15T10:17:45Z"
+      "checked_utc": "2026-10-15T15:20:03Z"
     }
   },
   "sources": {
@@ -54,17 +54,17 @@
   },
   "events": [
     {
-      "id": "openmeteo:dawei:2026-10-17:heavy_rain",
+      "id": "openmeteo:yangon:2026-10-17:uv",
       "kind": "weather_risk",
-      "hazard_type": "heavy_rain",
+      "hazard_type": "uv",
       "risk_level": "moderate",
-      "title": "Dawei",
-      "city": "Dawei",
-      "city_my": "ထားဝယ်",
-      "risk_title_en": "Heavy rainfall possible",
-      "risk_title_my": "မိုးသည်းထန်နိုင်ခြေ",
-      "lat": 14.0823,
-      "lon": 98.1959,
+      "title": "Yangon",
+      "city": "Yangon",
+      "city_my": "ရန်ကုန်",
+      "risk_title_en": "Very high UV screening",
+      "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
+      "lat": 16.8661,
+      "lon": 96.1951,
       "time_utc": "2026-10-17T00:00:00Z",
       "forecast_date": "2026-10-17",
       "forecast_lead_days": 2,
@@ -74,7 +74,7 @@
       "url": "https://open-meteo.com/en/docs",
       "source": "Open-Meteo forecast-based hazard screening",
       "status": "forecast",
-      "details": "Daily precipitation forecast 27.4 mm with 99% precipitation probability. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
+      "details": "Maximum UV index forecast 8.0; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
     },
     {
       "id": "openmeteo:kawthoung:2026-10-17:uv",
@@ -97,7 +97,7 @@
       "url": "https://open-meteo.com/en/docs",
       "source": "Open-Meteo forecast-based hazard screening",
       "status": "forecast",
-      "details": "Maximum UV index forecast 8.6; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
+      "details": "Maximum UV index forecast 8.5; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
     },
     {
       "id": "openmeteo:yangon:2026-10-16:uv",
@@ -123,17 +123,63 @@
       "details": "Maximum UV index forecast 8.0; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
     },
     {
-      "id": "openmeteo:dawei:2026-10-16:uv",
+      "id": "openmeteo:mawlamyine:2026-10-16:uv",
       "kind": "weather_risk",
       "hazard_type": "uv",
       "risk_level": "moderate",
-      "title": "Dawei",
-      "city": "Dawei",
-      "city_my": "ထားဝယ်",
+      "title": "Mawlamyine",
+      "city": "Mawlamyine",
+      "city_my": "မော်လမြိုင်",
       "risk_title_en": "Very high UV screening",
       "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
-      "lat": 14.0823,
-      "lon": 98.1959,
+      "lat": 16.4905,
+      "lon": 97.6283,
+      "time_utc": "2026-10-16T00:00:00Z",
+      "forecast_date": "2026-10-16",
+      "forecast_lead_days": 1,
+      "magnitude": null,
+      "depth_km": null,
+      "severity": "moderate",
+      "url": "https://open-meteo.com/en/docs",
+      "source": "Open-Meteo forecast-based hazard screening",
+      "status": "forecast",
+      "details": "Maximum UV index forecast 8.0; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
+    },
+    {
+      "id": "openmeteo:pathein:2026-10-16:uv",
+      "kind": "weather_risk",
+      "hazard_type": "uv",
+      "risk_level": "moderate",
+      "title": "Pathein",
+      "city": "Pathein",
+      "city_my": "ပုသိမ်",
+      "risk_title_en": "Very high UV screening",
+      "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
+      "lat": 16.7792,
+      "lon": 94.7321,
+      "time_utc": "2026-10-16T00:00:00Z",
+      "forecast_date": "2026-10-16",
+      "forecast_lead_days": 1,
+      "magnitude": null,
+      "depth_km": null,
+      "severity": "moderate",
+      "url": "https://open-meteo.com/en/docs",
+      "source": "Open-Meteo forecast-based hazard screening",
+      "status": "forecast",
+      "details": "Maximum UV index forecast 8.0; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
+    },
+    {
+      "id": "openmeteo:kawthoung:2026-10-16:uv",
+      "kind": "weather_risk",
+      "hazard_type": "uv",
+      "risk_level": "moderate",
+      "title": "Kawthoung",
+      "city": "Kawthoung",
+      "city_my": "ကော့သောင်း",
+      "risk_title_en": "Very high UV screening",
+      "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
+      "lat": 9.9824,
+      "lon": 98.5503,
       "time_utc": "2026-10-16T00:00:00Z",
       "forecast_date": "2026-10-16",
       "forecast_lead_days": 1,
