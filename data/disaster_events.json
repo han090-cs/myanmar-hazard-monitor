@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-15T05:45:02Z",
-  "checked_utc": "2026-10-15T05:45:02Z",
+  "generated_utc": "2026-10-15T10:17:45Z",
+  "checked_utc": "2026-10-15T10:17:45Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -12,22 +12,22 @@
     "usgs": {
       "status": "ok",
       "count": 8,
-      "checked_utc": "2026-10-15T05:44:59Z"
+      "checked_utc": "2026-10-15T10:17:42Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-15T05:45:01Z"
+      "checked_utc": "2026-10-15T10:17:44Z"
     },
     "weather_forecast": {
       "status": "ok",
       "count": 7,
-      "checked_utc": "2026-10-15T05:45:02Z"
+      "checked_utc": "2026-10-15T10:17:45Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-15T05:45:02Z"
+      "checked_utc": "2026-10-15T10:17:45Z"
     }
   },
   "sources": {
@@ -54,17 +54,17 @@
   },
   "events": [
     {
-      "id": "openmeteo:kawthoung:2026-10-17:heavy_rain",
+      "id": "openmeteo:dawei:2026-10-17:heavy_rain",
       "kind": "weather_risk",
       "hazard_type": "heavy_rain",
       "risk_level": "moderate",
-      "title": "Kawthoung",
-      "city": "Kawthoung",
-      "city_my": "ကော့သောင်း",
+      "title": "Dawei",
+      "city": "Dawei",
+      "city_my": "ထားဝယ်",
       "risk_title_en": "Heavy rainfall possible",
       "risk_title_my": "မိုးသည်းထန်နိုင်ခြေ",
-      "lat": 9.9824,
-      "lon": 98.5503,
+      "lat": 14.0823,
+      "lon": 98.1959,
       "time_utc": "2026-10-17T00:00:00Z",
       "forecast_date": "2026-10-17",
       "forecast_lead_days": 2,
@@ -74,7 +74,7 @@
       "url": "https://open-meteo.com/en/docs",
       "source": "Open-Meteo forecast-based hazard screening",
       "status": "forecast",
-      "details": "Daily precipitation forecast 29.2 mm with 99% precipitation probability. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
+      "details": "Daily precipitation forecast 27.4 mm with 99% precipitation probability. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
     },
     {
       "id": "openmeteo:kawthoung:2026-10-17:uv",
