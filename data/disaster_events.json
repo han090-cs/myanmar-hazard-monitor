@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-15T22:40:34Z",
-  "checked_utc": "2026-10-15T22:40:34Z",
+  "generated_utc": "2026-10-16T00:45:39Z",
+  "checked_utc": "2026-10-16T00:45:39Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -12,22 +12,23 @@
     "usgs": {
       "status": "ok",
       "count": 9,
-      "checked_utc": "2026-10-15T22:40:22Z"
+      "checked_utc": "2026-10-16T00:45:12Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-15T22:40:24Z"
+      "checked_utc": "2026-10-16T00:45:14Z"
     },
     "weather_forecast": {
-      "status": "ok",
-      "count": 9,
-      "checked_utc": "2026-10-15T22:40:34Z"
+      "status": "error",
+      "message": "HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=25)",
+      "cached_count": 9,
+      "checked_utc": "2026-10-16T00:45:39Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-15T22:40:34Z"
+      "checked_utc": "2026-10-16T00:45:39Z"
     }
   },
   "sources": {
