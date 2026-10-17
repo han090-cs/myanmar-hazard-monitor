@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-17T12:56:56Z",
-  "checked_utc": "2026-10-17T12:56:56Z",
+  "generated_utc": "2026-10-17T16:23:13Z",
+  "checked_utc": "2026-10-17T16:23:13Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -12,22 +12,22 @@
     "usgs": {
       "status": "ok",
       "count": 9,
-      "checked_utc": "2026-10-17T12:56:54Z"
+      "checked_utc": "2026-10-17T16:23:10Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-17T12:56:56Z"
+      "checked_utc": "2026-10-17T16:23:12Z"
     },
     "weather_forecast": {
       "status": "ok",
       "count": 4,
-      "checked_utc": "2026-10-17T12:56:56Z"
+      "checked_utc": "2026-10-17T16:23:13Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-17T12:56:56Z"
+      "checked_utc": "2026-10-17T16:23:13Z"
     }
   },
   "sources": {
@@ -238,12 +238,12 @@
     {
       "id": "usgs:us6000tz6z",
       "kind": "earthquake",
-      "title": "56 km SSE of Mawlaik, Burma (Myanmar)",
-      "lat": 23.1453,
-      "lon": 94.5469,
+      "title": "58 km S of Mawlaik, Burma (Myanmar)",
+      "lat": 23.1139,
+      "lon": 94.4239,
       "time_utc": "2026-10-02T16:55:33Z",
       "magnitude": 4.5,
-      "depth_km": 103.866,
+      "depth_km": 106.733,
       "severity": "reported",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz6z",
       "source": "USGS Earthquake Catalog",
