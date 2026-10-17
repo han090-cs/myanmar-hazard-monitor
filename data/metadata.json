@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_run_utc": "2026-10-17T02:26:57Z",
+  "last_run_utc": "2026-10-17T14:45:40Z",
   "run_status": "error",
   "admin_level": null,
   "layers": {
@@ -9,21 +9,21 @@
       "message": "ConfigError: Secret EE_SERVICE_ACCOUNT_KEY is empty or missing. See README.md.",
       "updated_utc": null,
       "sha256": null,
-      "last_checked_utc": "2026-10-17T02:26:57Z"
+      "last_checked_utc": "2026-10-17T14:45:40Z"
     },
     "landslide": {
       "status": "error",
       "message": "ConfigError: Secret EE_SERVICE_ACCOUNT_KEY is empty or missing. See README.md.",
       "updated_utc": null,
       "sha256": null,
-      "last_checked_utc": "2026-10-17T02:26:57Z"
+      "last_checked_utc": "2026-10-17T14:45:40Z"
     },
     "susceptibility": {
       "status": "error",
       "message": "ConfigError: Secret EE_SERVICE_ACCOUNT_KEY is empty or missing. See README.md.",
       "updated_utc": null,
       "sha256": null,
-      "last_checked_utc": "2026-10-17T02:26:57Z"
+      "last_checked_utc": "2026-10-17T14:45:40Z"
     }
   },
   "versions": {
