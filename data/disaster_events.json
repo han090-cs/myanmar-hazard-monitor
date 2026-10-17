@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-16T23:52:35Z",
-  "checked_utc": "2026-10-16T23:52:35Z",
+  "generated_utc": "2026-10-17T04:20:34Z",
+  "checked_utc": "2026-10-17T04:20:34Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -12,22 +12,22 @@
     "usgs": {
       "status": "ok",
       "count": 9,
-      "checked_utc": "2026-10-16T23:52:33Z"
+      "checked_utc": "2026-10-17T04:20:32Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-16T23:52:35Z"
+      "checked_utc": "2026-10-17T04:20:34Z"
     },
     "weather_forecast": {
       "status": "ok",
-      "count": 7,
-      "checked_utc": "2026-10-16T23:52:35Z"
+      "count": 4,
+      "checked_utc": "2026-10-17T04:20:34Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-16T23:52:35Z"
+      "checked_utc": "2026-10-17T04:20:34Z"
     }
   },
   "sources": {
@@ -67,7 +67,7 @@
       "lon": 96.1951,
       "time_utc": "2026-10-17T00:00:00Z",
       "forecast_date": "2026-10-17",
-      "forecast_lead_days": 1,
+      "forecast_lead_days": 0,
       "magnitude": null,
       "depth_km": null,
       "severity": "moderate",
@@ -90,7 +90,7 @@
       "lon": 94.7321,
       "time_utc": "2026-10-17T00:00:00Z",
       "forecast_date": "2026-10-17",
-      "forecast_lead_days": 1,
+      "forecast_lead_days": 0,
       "magnitude": null,
       "depth_km": null,
       "severity": "moderate",
@@ -113,7 +113,7 @@
       "lon": 98.1959,
       "time_utc": "2026-10-17T00:00:00Z",
       "forecast_date": "2026-10-17",
-      "forecast_lead_days": 1,
+      "forecast_lead_days": 0,
       "magnitude": null,
       "depth_km": null,
       "severity": "moderate",
@@ -136,7 +136,7 @@
       "lon": 98.5503,
       "time_utc": "2026-10-17T00:00:00Z",
       "forecast_date": "2026-10-17",
-      "forecast_lead_days": 1,
+      "forecast_lead_days": 0,
       "magnitude": null,
       "depth_km": null,
       "severity": "moderate",
@@ -144,75 +144,6 @@
       "source": "Open-Meteo forecast-based hazard screening",
       "status": "forecast",
       "details": "Maximum UV index forecast 8.5; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
-    },
-    {
-      "id": "openmeteo:mawlamyine:2026-10-16:uv",
-      "kind": "weather_risk",
-      "hazard_type": "uv",
-      "risk_level": "moderate",
-      "title": "Mawlamyine",
-      "city": "Mawlamyine",
-      "city_my": "မော်လမြိုင်",
-      "risk_title_en": "Very high UV screening",
-      "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
-      "lat": 16.4905,
-      "lon": 97.6283,
-      "time_utc": "2026-10-16T00:00:00Z",
-      "forecast_date": "2026-10-16",
-      "forecast_lead_days": 0,
-      "magnitude": null,
-      "depth_km": null,
-      "severity": "moderate",
-      "url": "https://open-meteo.com/en/docs",
-      "source": "Open-Meteo forecast-based hazard screening",
-      "status": "forecast",
-      "details": "Maximum UV index forecast 8.0; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
-    },
-    {
-      "id": "openmeteo:pathein:2026-10-16:uv",
-      "kind": "weather_risk",
-      "hazard_type": "uv",
-      "risk_level": "moderate",
-      "title": "Pathein",
-      "city": "Pathein",
-      "city_my": "ပုသိမ်",
-      "risk_title_en": "Very high UV screening",
-      "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
-      "lat": 16.7792,
-      "lon": 94.7321,
-      "time_utc": "2026-10-16T00:00:00Z",
-      "forecast_date": "2026-10-16",
-      "forecast_lead_days": 0,
-      "magnitude": null,
-      "depth_km": null,
-      "severity": "moderate",
-      "url": "https://open-meteo.com/en/docs",
-      "source": "Open-Meteo forecast-based hazard screening",
-      "status": "forecast",
-      "details": "Maximum UV index forecast 8.1; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
-    },
-    {
-      "id": "openmeteo:kawthoung:2026-10-16:uv",
-      "kind": "weather_risk",
-      "hazard_type": "uv",
-      "risk_level": "moderate",
-      "title": "Kawthoung",
-      "city": "Kawthoung",
-      "city_my": "ကော့သောင်း",
-      "risk_title_en": "Very high UV screening",
-      "risk_title_my": "UV အညွှန်းမြင့်မားနိုင်ခြေ",
-      "lat": 9.9824,
-      "lon": 98.5503,
-      "time_utc": "2026-10-16T00:00:00Z",
-      "forecast_date": "2026-10-16",
-      "forecast_lead_days": 0,
-      "magnitude": null,
-      "depth_km": null,
-      "severity": "moderate",
-      "url": "https://open-meteo.com/en/docs",
-      "source": "Open-Meteo forecast-based hazard screening",
-      "status": "forecast",
-      "details": "Maximum UV index forecast 8.4; screening threshold ≥8. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
     },
     {
       "id": "usgs:us6000u1sk",
