@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-17T08:47:56Z",
-  "checked_utc": "2026-10-17T08:47:56Z",
+  "generated_utc": "2026-10-17T12:56:56Z",
+  "checked_utc": "2026-10-17T12:56:56Z",
   "coverage": {
     "west": 92.0,
     "south": 9.0,
@@ -12,22 +12,22 @@
     "usgs": {
       "status": "ok",
       "count": 9,
-      "checked_utc": "2026-10-17T08:47:53Z"
+      "checked_utc": "2026-10-17T12:56:54Z"
     },
     "gdacs": {
       "status": "ok",
       "count": 0,
-      "checked_utc": "2026-10-17T08:47:55Z"
+      "checked_utc": "2026-10-17T12:56:56Z"
     },
     "weather_forecast": {
       "status": "ok",
-      "count": 5,
-      "checked_utc": "2026-10-17T08:47:56Z"
+      "count": 4,
+      "checked_utc": "2026-10-17T12:56:56Z"
     },
     "firms": {
       "status": "skipped_no_key",
       "count": 0,
-      "checked_utc": "2026-10-17T08:47:56Z"
+      "checked_utc": "2026-10-17T12:56:56Z"
     }
   },
   "sources": {
@@ -53,29 +53,6 @@
     }
   },
   "events": [
-    {
-      "id": "openmeteo:kawthoung:2026-10-19:heavy_rain",
-      "kind": "weather_risk",
-      "hazard_type": "heavy_rain",
-      "risk_level": "moderate",
-      "title": "Kawthoung",
-      "city": "Kawthoung",
-      "city_my": "ကော့သောင်း",
-      "risk_title_en": "Heavy rainfall possible",
-      "risk_title_my": "မိုးသည်းထန်နိုင်ခြေ",
-      "lat": 9.9824,
-      "lon": 98.5503,
-      "time_utc": "2026-10-19T00:00:00Z",
-      "forecast_date": "2026-10-19",
-      "forecast_lead_days": 2,
-      "magnitude": null,
-      "depth_km": null,
-      "severity": "moderate",
-      "url": "https://open-meteo.com/en/docs",
-      "source": "Open-Meteo forecast-based hazard screening",
-      "status": "forecast",
-      "details": "Daily precipitation forecast 27.5 mm with 100% precipitation probability. Model-derived screening only; not an official warning. Check Myanmar DMH and local authorities."
-    },
     {
       "id": "openmeteo:yangon:2026-10-17:uv",
       "kind": "weather_risk",
